@@ -10,6 +10,8 @@ use Doctrine\Persistence\ManagerRegistry;
  * @method ClientMoral|null find($id, $lockMode = null, $lockVersion = null)
  * @method ClientMoral|null findOneBy(array $criteria, array $orderBy = null)
  * @method ClientMoral[]    findAll()
+ * @method ClientMoral[]    flush()
+ * @method ClientMoral[]    persist()
  * @method ClientMoral[]    findBy(array $criteria, array $orderBy = null, $limit = null, $offset = null)
  */
 class ClientMoralRepository extends ServiceEntityRepository

@@ -6,18 +6,18 @@ use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\Routing\Annotation\Route;
 use App\Entity\ClientMoral;
 
-
 class ClientMoralController extends AbstractController
 
 {
+   
     
     /**
-     * @Route("/", name="client_moral")
+     * @Route("/ajout", name="ajout")
      */
     public function ajout()
-    {
     
-        $mr = $this->getDoctrine()->getManager();
+    {
+
         $ClientMoral = new ClientMoral();
         $ClientMoral->setNomEntreprise('nom_entreprise');
         $ClientMoral->setAdresse('adresse');
@@ -26,8 +26,10 @@ class ClientMoralController extends AbstractController
         $ClientMoral->setTypeEntreprise('type_entreprise');
         $ClientMoral->setRaisonSocial('raison_social');
         $ClientMoral->setIdentifiantEntreprise('identifiant_entreprise');
+
+   $mr = $this->getDoctrine()->getManager();
         $mr->persist($ClientMoral);
-        $mr->flush;
+         $mr->flush();
         return $this->render('client_moral/ajout.html.twig', [
             'ClientMoral' => 'ClientMoralController',
            

@@ -26,5 +26,16 @@ class LoginController extends AbstractController
             'message' => 'LoginController',
         ]);
     }
+     /**
+     * @Route("/logon", name="logon")
+     */
+
+public function logon()
+{
+    return $this->render('client_moral/ajout.html.twig', [
+        'message' => 'LoginController',
+    ]);
 }
+}
+
 
